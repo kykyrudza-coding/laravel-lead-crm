@@ -52,9 +52,9 @@ return Application::configure(basePath: dirname(__DIR__))
                     $modelId = intval(Arr::first($previous->getIds(), default: 0));
 
                     $exception = match ($previous->getModel()) {
-                        Lead::class    => new LeadNotFoundException($modelId),
+                        Lead::class => new LeadNotFoundException($modelId),
                         Manager::class => new ManagerNotFoundException($modelId),
-                        default        => null,
+                        default => null,
                     };
 
                     if ($exception) {

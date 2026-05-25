@@ -27,7 +27,7 @@ class ManagerLeadController extends Controller
             ->get()
             ->map(fn ($lead) => [
                 ...Arr::only($lead->toArray(), ['id', 'name', 'status']),
-                'calls_count'         => $lead->calls_count,
+                'calls_count' => $lead->calls_count,
                 'total_call_duration' => intval(data_get($lead, 'calls_sum_duration', 0)),
             ]);
 

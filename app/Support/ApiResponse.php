@@ -16,7 +16,7 @@ class ApiResponse
     {
         return response()->json([
             'success' => true,
-            'data'    => $data,
+            'data' => $data,
         ], $status);
     }
 
@@ -36,7 +36,7 @@ class ApiResponse
         $payload = Arr::whereNotNull([
             'success' => false,
             'message' => $message,
-            'errors'  => $errors,
+            'errors' => $errors,
         ]);
 
         return response()->json($payload, $status);
